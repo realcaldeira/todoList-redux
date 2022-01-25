@@ -1,9 +1,12 @@
 
-import './App.css';
 import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Header from './common/Header';
 import Home from './home';
+import CreateList from './createList';
+import './App.css';
 
 
 const theme = createMuiTheme({
@@ -20,8 +23,15 @@ const theme = createMuiTheme({
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <Header />
-      <Home />
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/lista' component={CreateList} />
+          </Switch>
+        </div>
+      </Router>
     </MuiThemeProvider>
   );
 }
