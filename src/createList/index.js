@@ -1,7 +1,21 @@
 import React from 'react';
 
+import './styles.css'
+import Form from './Form';
+import ListItem from './ListItem';
+
+
 const CreateList = () => (
-  <h1>Lista</h1>
-)
+  <div className='page-container'>
+    <Form />
+
+    <div className='list-items-container'>
+      <ListItem />
+    </div>
+
+  </div>
+);
+
+
 
 export default CreateList;
