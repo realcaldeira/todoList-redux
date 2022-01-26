@@ -10,6 +10,7 @@ import './List.css';
 const List = () => (
   <CustomCard
     containerClass="list-container"
+    link="/lista"
     footer={<ListFooter />}
   >
     <div>

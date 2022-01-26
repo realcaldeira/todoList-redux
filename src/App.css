@@ -7,3 +7,14 @@
   font-weight: bold;
   text-align: center;
 }
+
+.text-left {
+  text-align: left;
+  font-size: 22px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
