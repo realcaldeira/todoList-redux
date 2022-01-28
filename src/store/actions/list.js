@@ -5,7 +5,7 @@ export const Types = {
 export const Creators = {
   addProduct: (product, list) => ({
     type: Types.ADD_PRODUCT,
-    product: '',
+    product,
     list,
   }),
 }

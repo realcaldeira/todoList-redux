@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CheckBox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import CustomCard from '../common/CustomCard';
 import ListItemFooter from './ListItemFooter';
 
-const ListItem = () => (
-  <CustomCard
-    link="#"
-    image="http://s2.glbimg.com/P6Nn4AXYPq-K1Xek4cCKyONYYyA=/e.glbimg.com/og/ed/f/original/2014/01/15/cafe.jpg"
-    containerClass="list-item"
-    footer={<ListItemFooter />}
-  >
-    <div>
-      <div className='list-item-header'>
-        <Typography variant="subtitle1" component='h2'>Café</Typography>
-        <CheckBox />
+function ListItem({ item }) {
+  // useEffect(() => {
+  //   console.log('props', props)
+  // }, [props])
+  return (
+    <CustomCard
+      link="#"
+      image="http://s2.glbimg.com/P6Nn4AXYPq-K1Xek4cCKyONYYyA=/e.glbimg.com/og/ed/f/original/2014/01/15/cafe.jpg"
+      containerClass="list-item"
+      footer={<ListItemFooter total={item.total} />}
+    >
+      <div>
+        <div className='list-item-header'>
+          <Typography variant="subtitle1" component='h2'>{item.product}</Typography>
+          <CheckBox />
+        </div>
+        <Typography component="p">{item.quantity} {item.unit}</Typography>
+        <Typography component="p">R$ {item.price}</Typography>
       </div>
-      <Typography component="p">1 unidade</Typography>
-      <Typography component="p">R$ 10.00</Typography>
-    </div>
-  </CustomCard>
-)
+    </CustomCard>
+  )
+}
 
 export default ListItem;
