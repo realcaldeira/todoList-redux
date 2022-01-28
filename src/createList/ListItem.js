@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CheckBox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
 import CustomCard from '../common/CustomCard';
 import ListItemFooter from './ListItemFooter';
 
-function ListItem({ item }) {
-  // useEffect(() => {
-  //   console.log('props', props)
-  // }, [props])
+function ListItem({ item, deleteProduct }) {
+
   return (
     <CustomCard
       link="#"
       image="http://s2.glbimg.com/P6Nn4AXYPq-K1Xek4cCKyONYYyA=/e.glbimg.com/og/ed/f/original/2014/01/15/cafe.jpg"
       containerClass="list-item"
-      footer={<ListItemFooter total={item.total} />}
+      footer={<ListItemFooter deleteProduct={deleteProduct} item={item} />}
     >
       <div>
         <div className='list-item-header'>

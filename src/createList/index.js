@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -9,18 +9,18 @@ import { Creators as ListActions } from '../store/actions/list';
 
 
 function CreateList(props) {
-
-  // useEffect(() => {
-  //   console.log('props', props.list)
-
-  // }, [props])
-
   return (
     <div className='page-container'>
       <Form />
 
       <div className='list-items-container'>
-        {props.list.items.map((item, index) => <ListItem item={item} key={index} />)}
+        {props.list.items.map((item) =>
+          <ListItem
+            item={item}
+            deleteProduct={props.deleteProduct}
+            key={item.id}
+          />
+        )}
       </div>
 
     </div>
