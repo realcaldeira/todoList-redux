@@ -17,6 +17,7 @@ function CreateList(props) {
         {props.list.items.map((item) =>
           <ListItem
             item={item}
+            toggleProduct={props.toggleProduct}
             deleteProduct={props.deleteProduct}
             key={item.id}
           />

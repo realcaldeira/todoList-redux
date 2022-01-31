@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import CustomCard from '../common/CustomCard';
 import ListItemFooter from './ListItemFooter';
 
-function ListItem({ item, deleteProduct }) {
+function ListItem({ item, deleteProduct, toggleProduct }) {
 
   return (
     <CustomCard
@@ -16,7 +16,7 @@ function ListItem({ item, deleteProduct }) {
       <div>
         <div className='list-item-header'>
           <Typography variant="subtitle1" component='h2'>{item.product}</Typography>
-          <CheckBox />
+          <CheckBox onClick={() => toggleProduct(item.id)} checked={item.checked} />
         </div>
         <Typography component="p">{item.quantity} {item.unit}</Typography>
         <Typography component="p">R$ {item.price}</Typography>
